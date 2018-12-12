@@ -10,6 +10,10 @@ Welcome to {{ cookiecutter.project }}'s documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   sample_doc.rst
+   sample_doc.md
+   sample_doc.ipynb
+
 
 
 Indices and tables
