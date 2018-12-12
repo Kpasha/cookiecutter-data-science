@@ -1,10 +1,10 @@
-.. project_name documentation master file, created by
-   sphinx-quickstart on Wed Dec 12 12:34:58 2018.
+.. {{ cookiecutter.project }} documentation master file, created by
+   sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to project_name's documentation!
-========================================
+Welcome to {{ cookiecutter.project }}'s documentation!
+======================================================
 
 .. toctree::
    :maxdepth: 2
