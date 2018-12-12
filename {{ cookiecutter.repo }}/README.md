@@ -6,6 +6,7 @@
 Project Organization
 ------------
 
+```
 ├── README.md          <- The top-level README for developers using this project.
 │
 ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
@@ -24,8 +25,9 @@ Project Organization
 │   └──  __init__.py   <- Makes src a Python module
 │
 └── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
+```
 
 
 --------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+Project based on the [Cookiecutter Data Science project template](https://drivendata.github.io/cookiecutter-data-science).

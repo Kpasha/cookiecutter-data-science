@@ -10,9 +10,9 @@ Welcome to {{ cookiecutter.project }}'s documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   readme.rst
-   report.rst
-   notebook.rst
+   readme
+   report
+   notebook
 
 
 
