@@ -1,7 +1,15 @@
----
-title: "Rmarkdown example"
-output: html_document
----
+# Rmarkdown example
+
+I removed the YAML header. The header will not render correctly.
+
+Hot take: The header is not necessary:
+
+- Knitting to html is the default in RStudio.
+- To create the markdown file, you can
+  - run this command in R:
+    `rmarkdown::render('rmd.Rmd', output_format='md_document')`
+  - run this command in the terminal:
+    `Rscript -e "rmarkdown::render('rmd.Rmd', output_format='md_document')"`
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

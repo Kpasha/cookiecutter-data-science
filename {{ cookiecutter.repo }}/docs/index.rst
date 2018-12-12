@@ -1,9 +1,9 @@
-.. {{ cookiecutter.project }} documentation master file, created by
+.. slidoc documentation master file, created by
    sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to {{ cookiecutter.project }}'s documentation!
+Welcome to slidoc's documentation!
 ======================================================
 
 .. toctree::
@@ -11,10 +11,8 @@ Welcome to {{ cookiecutter.project }}'s documentation!
    :caption: Contents:
 
    readme
-   report
-   notebook
-
-
+   rmd/rmd_example.md
+   ipynb/jupyter.ipynb
 
 Indices and tables
 ==================
