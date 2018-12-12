@@ -19,9 +19,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'project_name'
-copyright = '2018, Author Name'
-author = 'Author Name'
+project = '{{ cookiecutter.project }}'
+copyright = '2018, {{ cookiecutter.author }}'
+author = '{{ cookiecutter.author }}'
 
 # The short X.Y version
 version = '0.0.1'
@@ -39,6 +39,16 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.coverage',
+    'sphinx.ext.doctest',
+    'sphinx.ext.githubpages',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.viewcode',
+    'nbsphinx',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -47,8 +57,11 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+from recommonmark.parser import CommonMarkParser
+
+source_parsers = {'.md': CommonMarkParser}
+
+source_suffix = ['.rst', '.md', '.ipynb']
 
 # The master toctree document.
 master_doc = 'index'
@@ -63,7 +76,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '**.ipynb_checkpoints']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
@@ -74,7 +87,7 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'classic'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -101,7 +114,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'project_namedoc'
+htmlhelp_basename = '{{ cookiecutter.project }}doc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -128,8 +141,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'project_name.tex', 'project\\_name Documentation',
-     'Author Name', 'manual'),
+    (master_doc, '{{ cookiecutter.project }}.tex', '{{ cookiecutter.project }} Documentation',
+     '{{ cookiecutter.author }}', 'manual'),
 ]
 
 
@@ -138,8 +151,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'project_name', 'project_name Documentation',
-     [author], 1)
+    (master_doc, '{{ cookiecutter.project }}', '{{ cookiecutter.project }} Documentation',
+     ['{{ cookiecutter.author }}'], 1)
 ]
 
 
@@ -149,8 +162,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'project_name', 'project_name Documentation',
-     author, 'project_name', 'One line description of project.',
+    (master_doc, '{{ cookiecutter.project }}', '{{ cookiecutter.project }} Documentation',
+     author, '{{ cookiecutter.project }}', '{{ cookiecutter.description }}',
      'Miscellaneous'),
 ]
 
