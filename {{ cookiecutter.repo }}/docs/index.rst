@@ -11,8 +11,10 @@ Welcome to slidoc's documentation!
    :caption: Contents:
 
    readme
+   {{ cookiecutter.repo }}
    rmd/rmd_example.md
    ipynb/jupyter.ipynb
+
 
 Indices and tables
 ==================
