@@ -1,8 +1,6 @@
 ---
 title: "Rmarkdown example"
-output:
-  html_notebook: default
-  html_document: default
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
