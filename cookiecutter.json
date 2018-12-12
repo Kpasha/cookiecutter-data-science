@@ -4,4 +4,5 @@
     "author": "Your name (or your organization/company/team)",
     "description": "A short description of the project.",
     "open_source_license": ["MIT", "BSD-3-Clause", "No license file"],
+    "version": "0.0.1"
 }
