@@ -8,6 +8,7 @@ Package Organization
 --------------------
 
 ::
+
     Slidoc
     ├── README.rst          <- The top-level README that describes this project
     │
