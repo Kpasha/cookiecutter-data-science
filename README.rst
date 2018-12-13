@@ -1,8 +1,8 @@
-========================
-{{cookiecutter.project}}
-========================
+=========================
+The Slidoc Python Package
+=========================
 
-{{cookiecutter.description}}
+Use Python to make HTML slides via Pandoc.
 
 Package Organization
 --------------------
@@ -18,11 +18,8 @@ Package Organization
     │   ├── jupyter.ipynb  <- An example of including a jupyter notebook in sphinx docs
     │   ├── make.bat       <- An automation file for Windows
     │   ├── readme.rst     <- A link to include the top-level README in the sphinx docs
-    │   ├── rmarkdown.Rmd  <- An example of including an R markdown file in sphinx docs
-    │   ├── rmd.md         <- The output of the R markdown file that will be included
-    │   ├── rmd_files      <- Local files used by the R markdown output file rmd.md
-    │   │   └── figure-markdown_strict
-    │   │       └── pressure-1.png
+    │   ├── rmd.Rmd        <- An example of including an R markdown file in sphinx docs
+    │   ├── rmd.md         <- The output of the R markdown file that will be included
     │   ├── slidoc.rst     <- A link to include the main module in the sphinx docs
     │   └── tests.rst      <- A link to include the tests in the sphinx docs
     │
