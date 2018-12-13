@@ -44,6 +44,7 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.coverage',
     'sphinx.ext.doctest',
+    'sphinxcontrib.fulltoc',
     'sphinx.ext.githubpages',
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
