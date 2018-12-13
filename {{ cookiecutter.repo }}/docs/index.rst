@@ -14,6 +14,7 @@ Welcome to slidoc's documentation!
    {{ cookiecutter.repo }}
    rmd/rmd_example.md
    ipynb/jupyter.ipynb
+   test_suite
 
 
 Indices and tables
