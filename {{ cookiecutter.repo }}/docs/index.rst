@@ -11,10 +11,10 @@ Welcome to {{ cookiecutter.project }}'s documentation!
    :caption: Contents:
 
    readme.rst
-   {{ cookiecutter.repo }}
+   {{ cookiecutter.repo }}.rst
    rmd.md
    jupyter.ipynb
-   test_suite.rst
+   tests.rst
 
 
 Indices and tables
