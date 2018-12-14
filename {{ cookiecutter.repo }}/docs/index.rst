@@ -14,6 +14,7 @@ Welcome to {{ cookiecutter.project }}'s documentation!
    {{ cookiecutter.repo }}.rst
    rmd.md
    jupyter.ipynb
+   altair.ipynb
    tests.rst
 
 
