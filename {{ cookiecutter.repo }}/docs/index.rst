@@ -17,6 +17,9 @@ Welcome to {{ cookiecutter.project }}'s documentation!
    altair.ipynb
    tests.rst
    pandoc_slides.rst
+   jupyterlab_slides.rst
+   revealjs.ipynb
+
 
 
 Indices and tables
