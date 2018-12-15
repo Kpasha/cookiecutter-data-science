@@ -16,6 +16,7 @@ Welcome to {{ cookiecutter.project }}'s documentation!
    jupyter.ipynb
    altair.ipynb
    tests.rst
+   pandoc_slides.rst
 
 
 Indices and tables
