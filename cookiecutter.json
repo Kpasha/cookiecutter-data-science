@@ -1,7 +1,8 @@
 {
     "project": "project",
-    "repo": "{{ cookiecutter.project.lower().replace(' ', '_') }}",
     "author": "Your name (or your organization/company/team)",
+    "repo": "{{ cookiecutter.project.lower().replace(' ', '_') }}",
+    "username": "{{ cookiecutter.author.lower().replace(' ', '_') }}",
     "description": "A short description of the project.",
     "license": ["MIT", "BSD-3-Clause", "No license file"],
     "version": "0.0.1"
