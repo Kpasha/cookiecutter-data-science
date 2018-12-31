@@ -52,7 +52,7 @@ docs/_build/html/index.html: $(DOCS) $(TESTS) $(SRC)
 	sphinx-build -M html docs/ docs/_build
 
 init:
-	curl -u '{{ cookiecutter.author }}' https://api.github.com/user/repos -d '{"name":"{{ cookiecutter.repo }}","description":"{{ cookiecutter.description }}"}'
+	curl -u '{{ cookiecutter.username }}' https://api.github.com/user/repos -d '{"name":"{{ cookiecutter.repo }}","description":"{{ cookiecutter.description }}"}'
 	echo "# {{ cookiecutter.project }}" >> README.md
 	git init
 	git add README.md
