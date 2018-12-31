@@ -9,8 +9,22 @@ TESTS = $(wildcard tests/*.py)
 SRC = $(wildcard src/*/*.py)
 
 
+git: .git/
 env: .venv/bin/activate
 docs: docs/_build/html/index.html
+patch-release: patch release
+minor-release: minor release
+major-release: major release
+
+
+.git/:
+	curl --user '{{ cookiecutter.username }}' https://api.github.com/user/repos --data '{"name":"{{ cookiecutter.repo }}","description":"{{ cookiecutter.description }}"}'
+	test -f README.rst || echo "{{ cookiecutter.project }}" >> README.rst
+	git init
+	git add --all
+	git commit --message "First commit"
+	git remote add origin https://github.com/marskar/{{ cookiecutter.repo }}.git
+	git push --set-upstream origin master
 
 .venv/bin/activate: setup.py
 ifneq ($(ENV), $(filter $(ENV),conda venv))
@@ -51,17 +65,6 @@ endif
 docs/_build/html/index.html: $(DOCS) $(TESTS) $(SRC)
 	sphinx-build -M html docs/ docs/_build
 
-git: init
-
-.git/: git
-	curl --user '{{ cookiecutter.username }}' https://api.github.com/user/repos --data '{"name":"{{ cookiecutter.repo }}","description":"{{ cookiecutter.description }}"}'
-	test -f README.rst || echo "{{ cookiecutter.project }}" >> README.rst
-	git init
-	git add --all
-	git commit --message "First commit"
-	git remote add origin https://github.com/marskar/{{ cookiecutter.repo }}.git
-	git push --set-upstream origin master
-
 clean:
 	rm -rf build/
 	rm -rf dist/
@@ -71,7 +74,7 @@ clean:
 
 commit:
 	git add --all
-	[ -z "`git status --porcelain`" ] || git commit --message "Edit version `python setup.py --version`"
+	[ -z "`git status --porcelain`" ] || git commit
 	git push
 
 patch: commit
