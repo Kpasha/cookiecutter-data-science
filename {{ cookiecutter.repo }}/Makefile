@@ -52,13 +52,13 @@ docs/_build/html/index.html: $(DOCS) $(TESTS) $(SRC)
 	sphinx-build -M html docs/ docs/_build
 
 init:
-	curl -u '{{ cookiecutter.username }}' https://api.github.com/user/repos -d '{"name":"{{ cookiecutter.repo }}","description":"{{ cookiecutter.description }}"}'
+	curl --user '{{ cookiecutter.username }}' https://api.github.com/user/repos --data '{"name":"{{ cookiecutter.repo }}","description":"{{ cookiecutter.description }}"}'
 	echo "# {{ cookiecutter.project }}" >> README.md
 	git init
 	git add README.md
-	git commit -m "first commit"
+	git commit --message "first commit"
 	git remote add origin https://github.com/marskar/{{ cookiecutter.repo }}.git
-	git push -u origin master
+	git push --set-upstream origin master
 
 clean:
 	rm -rf build/
