@@ -59,17 +59,24 @@ clean:
 	find . -name '*.egg' -exec rm -f {} +
 
 commit: env
-	git commit -am "working on version `python setup.py --version`"
+	[ -z "`git status --porcelain`" ] || git add --all
+	git commit --message "Edit version `python setup.py --version`"
 	git push
 
-patch:
+patch: commit
 	bumpversion --current-version `python setup.py --version` patch setup.py
+	git commit --all --message "Bump version to `python setup.py --version`"
+	git push
 
-minor:
+minor: commit
 	bumpversion --current-version `python setup.py --version` minor setup.py
+	git commit --all --message "Bump version to `python setup.py --version`"
+	git push
 
-major:
+major: commit
 	bumpversion --current-version `python setup.py --version` major setup.py
+	git commit --all --message "Bump version to `python setup.py --version`"
+	git push
 
 dist: clean
 	python setup.py sdist bdist_wheel
