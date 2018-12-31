@@ -53,10 +53,10 @@ docs/_build/html/index.html: $(DOCS) $(TESTS) $(SRC)
 
 init:
 	curl --user '{{ cookiecutter.username }}' https://api.github.com/user/repos --data '{"name":"{{ cookiecutter.repo }}","description":"{{ cookiecutter.description }}"}'
-	echo "# {{ cookiecutter.project }}" >> README.md
+	test -f README.rst || echo "{{ cookiecutter.project + '\n' + '=' * len({{ cookiecutter.project }}) }}" >> README.rst
 	git init
-	git add README.md
-	git commit --message "first commit"
+	git add README.rst
+	git commit --message "First commit"
 	git remote add origin https://github.com/marskar/{{ cookiecutter.repo }}.git
 	git push --set-upstream origin master
 
