@@ -9,7 +9,7 @@ TESTS = $(wildcard tests/*.py)
 SRC = $(wildcard src/*/*.py)
 
 
-git: .git/
+init: .git/
 env: .venv/bin/activate
 docs: docs/_build/html/index.html
 patch-release: patch release
@@ -65,6 +65,11 @@ endif
 docs/_build/html/index.html: $(DOCS) $(TESTS) $(SRC)
 	sphinx-build -M html docs/ docs/_build
 
+git:
+	git add --all
+	[ -z "`git status --porcelain`" ] || git commit
+	git push
+
 clean:
 	rm -rf build/
 	rm -rf dist/
@@ -72,22 +77,17 @@ clean:
 	find . -name '*.egg-info' -exec rm -rf {} +
 	find . -name '*.egg' -exec rm -f {} +
 
-commit:
-	git add --all
-	[ -z "`git status --porcelain`" ] || git commit
-	git push
-
-patch: commit
+patch: git
 	bumpversion --current-version `python setup.py --version` patch setup.py
 	git commit --all --message "Bump version to `python setup.py --version`"
 	git push
 
-minor: commit
+minor: git
 	bumpversion --current-version `python setup.py --version` minor setup.py
 	git commit --all --message "Bump version to `python setup.py --version`"
 	git push
 
-major: commit
+major: git
 	bumpversion --current-version `python setup.py --version` major setup.py
 	git commit --all --message "Bump version to `python setup.py --version`"
 	git push
