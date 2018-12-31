@@ -55,7 +55,7 @@ git: init
 
 .git/: git
 	curl --user '{{ cookiecutter.username }}' https://api.github.com/user/repos --data '{"name":"{{ cookiecutter.repo }}","description":"{{ cookiecutter.description }}"}'
-	test -f README.rst || echo "{{ cookiecutter.project + '\n' + '=' * len({{ cookiecutter.project }}) }}" >> README.rst
+	test -f README.rst || echo "{{ cookiecutter.project }}" >> README.rst
 	git init
 	git add --all
 	git commit --message "First commit"
