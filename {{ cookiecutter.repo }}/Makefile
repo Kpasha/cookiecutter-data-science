@@ -69,7 +69,7 @@ clean:
 	find . -name '*.egg-info' -exec rm -rf {} +
 	find . -name '*.egg' -exec rm -f {} +
 
-commit: env
+commit:
 	[ -z "`git status --porcelain`" ] || git add --all
 	git commit --message "Edit version `python setup.py --version`"
 	git push
